@@ -1,0 +1,270 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" href="css/style.css" type="text/css">
+
+<style type="text/css">
+body {
+	background-image: url(images/bg-pattern.jpg);
+	background-repeat: repeat;
+	background-color: #FFC;
+	text-align: center;
+}
+
+#tableShowData table .selected td {
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+}
+
+/* css กำหนดความกว้าง ความสูงของแผนที่ */  
+#map_canvas {   
+    width:460px;  
+    height:310px;  
+    margin:auto;  
+/*  margin-top:100px;*/  
+}
+#showDD table tr .selected {
+	font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+}
+</style>
+</head>
+
+<body>
+<div class="header">
+	
+	
+<table width="80%" height="735" border="0" align="center">
+  <tr>
+    <td height="152"><table width="100%" height="149" border="0">
+      <tr>
+        <td width="21%" height="145"><img src="images/logo.png" width="120" height="113" align="right" /></td>
+        <td width="79%"><blockquote>&nbsp;</blockquote></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><table width="100%" height="475" border="0">
+      <tr>
+        <td width="860" height="54">
+        
+        <div class="navigation" id="navigation" align="right">
+        	<h2>Add Help Place  </h2>
+        </div></td>
+      </tr>
+  
+  
+  <tr>
+    <td height="415">&nbsp;
+      <div id="map_canvas"></div>  
+   <div id="showDD" style="margin: auto; padding-top: 5px; width: 550px; font-size: 17px; font-weight: bold;">    
+   <table width="100%" border="0">
+ 
+ 
+  <tr>  
+    <td width="23%" class="selected"><div align="right">Name</div></td>
+    <td width="77%">
+      <form id="name" name="name" method="post" action="">
+        <label for="name"></label>
+        <input name="name" type="text" id="name" size="50" maxlength="50" />
+      </form></td>
+  </tr>
+  
+  
+  <tr>
+    <td class="selected"><div align="right">Address</div></td>
+    <td><form id="form4" name="form4" method="post" action="">
+      <label for="address"></label>
+      <input name="address" type="text" id="address" size="50" maxlength="50" />
+    </form></td>
+  </tr>
+  
+  
+  <tr>
+    <td class="selected"><div align="right">Cistrict</div></td>
+    <td><form id="form5" name="form5" method="post" action="">
+      <label for="district"></label>
+      <input name="district" type="text" id="district" size="50" maxlength="20" />
+    </form></td>
+  </tr>
+  
+  
+  <tr>
+    <td class="selected"><div align="right">Province</div></td>
+    <td>      
+      <select name="province2" id="province2">
+      		<option value = "0">Bangkok</option>
+     		<option value = "1">Chiang rai</option>
+      		<option value = "2">Chiang mai</option>
+            <option value = "3">Lamphun</option>
+        	<option value = "4">Lampang</option>
+        	<option value = "5">Phayao</option>
+        	<option value = "6">Nan</option>
+        	<option value = "7">Phare</option>
+    		</select>
+    </td>
+  </tr>
+  <tr>
+    <td class="selected"><div align="right">Zipcode</div></td>
+    <td><form id="form7" name="form7" method="post" action="">
+      <label for="zipcode"></label>
+      <input name="zipcode" type="text" id="zipcode" size="50" maxlength="5" />
+    </form></td>
+  </tr>
+  <tr>
+    <td class="selected"><div align="right">Phone Number</div></td>
+    <td><form id="form8" name="form8" method="post" action="">
+      <label for="phonenumber"></label>
+      <input name="phonenumber" type="text" id="phonenumber" size="50" maxlength="10" />
+    </form></td>
+  </tr>
+  
+  <tr>
+    <td class="selected"><div align="right">Latitude </div></td>
+    <td>
+    	<form id="form_get_detailMap" name="form_get_detailMap" method="post" action="">    
+    	<input name="lat_value" type="text" id="lat_value" size="50" readonly="readonly" />  <br />  
+    	</form>
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="selected"><div align="right">Longitude</div></td>
+    <td>
+    	<form id="form_get_detailMap" name="form_get_detailMap" method="post" action="">    
+        <input name="lon_value" type="text" id="lon_value" size="50" readonly="readonly" />  <br /> 
+   	    </form>
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="selected"><div align="right">Category</div></td>
+    <td>
+      <label for="category"></label>
+      
+      <select name="category" id="category">
+        <option>Hospital</option>
+        <option>Police Station</option>
+        <option>Highway Police Station </option>
+        <option>Garage</option>
+      </select>
+      
+       
+    
+    </form></td>
+  </tr>
+  <tr>
+    <td colspan="2">  
+    <form id="sendValue" name="form_get_detailMap" method="post" action="showTest.html">   
+    <input type="submit" name="button" id="button" value="Add Place"/>  
+    </form>
+    </td>
+    </tr>
+  
+    
+    
+   </table>
+   </div>   
+		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>  
+		<script type="text/javascript"> 
+    	var map; // กำหนดตัวแปร map ไว้ด้านนอกฟังก์ชัน เพื่อให้สามารถเรียกใช้งาน จากส่วนอื่นได้  
+		var GGM; // กำหนดตัวแปร GGM ไว้เก็บ google.maps Object จะได้เรียกใช้งานได้ง่ายขึ้น  
+		var geocoder; // กำหนดตัวแปรสำหรับ เก็บ Geocoder Object ใช้แปลงชื่อสถานที่เป็นพิกัด  
+		var my_Marker=[]; // กำหนดตัวแปรสำหรับเก็บตัว marker เป็นตัวแปร array  
+		var i=0; // ค่าสำหรับเก็บ ลำดับ index ของ ตัว marker แต่ละตัว  
+
+function initialize() { // ฟังก์ชันแสดงแผนที่  
+    GGM=new Object(google.maps); // เก็บตัวแปร google.maps Object ไว้ในตัวแปร GGM  
+    geocoder = new GGM.Geocoder(); // เก็บตัวแปร google.maps.Geocoder Object  
+    // กำหนดจุดเริ่มต้นของแผนที่  
+    var my_Latlng  = new GGM.LatLng(13.761728449950002,100.6527900695800);  
+    var my_mapTypeId=GGM.MapTypeId.ROADMAP; // กำหนดรูปแบบแผนที่ที่แสดง  
+    // กำหนด DOM object ที่จะเอาแผนที่ไปแสดง ที่นี้คือ div id=map_canvas  
+    var my_DivObj=$("#map_canvas")[0];  
+	
+    // กำหนด Option ของแผนที่  
+    var myOptions = {  
+        zoom: 13, // กำหนดขนาดการ zoom  
+        center: my_Latlng , // กำหนดจุดกึ่งกลาง จากตัวแปร my_Latlng  
+        mapTypeId:my_mapTypeId // กำหนดรูปแบบแผนที่ จากตัวแปร my_mapTypeId  
+    };  
+    map = new GGM.Map(my_DivObj,myOptions); // สร้างแผนที่และเก็บตัวแปรไว้ในชื่อ map  
+    map.setCenter(center, 15);   
+    // กำหนด event ให้กับตัวแผนที่ เมื่อมีการเปลี่ยนแปลงการ zoom  
+    GGM.event.addListener(map, 'zoom_changed', function() {  
+        $("#zoom_value").val(map.getZoom());   // เอาขนาด zoom ของแผนที่แสดงใน textbox id=zoom_value      
+    });  
+  
+}  
+//  สร้างฟังก์ชัน สำหรับสร้าง ตัว marker แต่ละตัว   
+function add_marker(index,my_Latlng){  
+    my_Marker[index] = new GGM.Marker({ // สร้างตัว marker ไว้ในตัวแปร my_Marker  
+        position: my_Latlng,  // กำหนดไว้ที่เดียวกับจุดกึ่งกลาง  
+        map: map, // กำหนดว่า marker นี้ใช้กับแผนที่ชื่อ instance ว่า map  
+        draggable:true, // กำหนดให้สามารถลากตัว marker นี้ได้  
+        title:"คลิกลากเพื่อหาตำแหน่งจุดที่ต้องการ!" // แสดง title เมื่อเอาเมาส์มาอยู่เหนือ  
+    });   
+  
+    GGM.event.addListener(my_Marker[index], 'click', function() {  
+        var my_Point = my_Marker[index].getPosition();  // หาตำแหน่งของตัว marker เมื่อกดลากแล้วปล่อย  
+        map.panTo(my_Point); // ให้แผนที่แสดงไปที่ตัว marker          
+        $("#lat_value").val(my_Point.lat());  // เอาค่า latitude ตัว marker แสดงใน textbox id=lat_value  
+        $("#lon_value").val(my_Point.lng());  // เอาค่า longitude ตัว marker แสดงใน textbox id=lon_value   
+        $("#zoom_value").val(map.getZoom());  // เอาขนาด zoom ของแผนที่แสดงใน textbox id=zoom_valu            
+    });           
+        // กำหนด event ให้กับตัว marker เมื่อสิ้นสุดการลากตัว marker ให้ทำงานอะไร     
+    GGM.event.addListener(my_Marker[index], 'dragend', function() {  
+        var my_Point = my_Marker[index].getPosition();  // หาตำแหน่งของตัว marker เมื่อกดลากแล้วปล่อย  
+        map.panTo(my_Point); // ให้แผนที่แสดงไปที่ตัว marker          
+        $("#lat_value").val(my_Point.lat());  // เอาค่า latitude ตัว marker แสดงใน textbox id=lat_value  
+        $("#lon_value").val(my_Point.lng());  // เอาค่า longitude ตัว marker แสดงใน textbox id=lon_value   
+        $("#zoom_value").val(map.getZoom());  // เอาขนาด zoom ของแผนที่แสดงใน textbox id=zoom_valu            
+    });           
+      
+}  
+
+$(function(){  
+    // ส่วนของฟังก์ชันค้นหาชื่อสถานที่ในแผนที่  
+    var searchPlace=function(){ // ฟังก์ชัน สำหรับคันหาสถานที่ ชื่อ searchPlace 
+		
+		var e = document.getElementById("province2");
+		var AddressSearch = e.options[e.selectedIndex].text;
+
+        if(geocoder){ // ตรวจสอบว่าถ้ามี Geocoder Object   
+            geocoder.geocode({  
+                 address: AddressSearch // ให้ส่งชื่อสถานที่ไปค้นหา  
+            },function(results, status){ // ส่งกลับการค้นหาเป็นผลลัพธ์ และสถานะ  
+                if(status == GGM.GeocoderStatus.OK) { // ตรวจสอบสถานะ ถ้าหากเจอ  
+                    var my_Point=results[0].geometry.location; // เอาผลลัพธ์ของพิกัด มาเก็บไว้ที่ตัวแปร  
+                    map.setCenter(my_Point); // กำหนดจุดกลางของแผนที่ไปที่ พิกัดผลลัพธ์  
+                    i++;  
+                    add_marker(i,my_Point);  
+                    $("#lat_value").val(my_Point.lat());  // เอาค่า latitude พิกัดผลลัพธ์ แสดงใน textbox id=lat_value  
+                    $("#lon_value").val(my_Point.lng());  // เอาค่า longitude พิกัดผลลัพธ์ แสดงใน textbox id=lon_value   
+                    $("#zoom_value").val(map.getZoom()); // เอาขนาด zoom ของแผนที่แสดงใน textbox id=zoom_valu             
+                }  
+            });  
+        }         
+    }  
+    $("#province2").click(function(){ 
+        searchPlace();}); 
+		
+	$("#province2").keyup(function(event){ // เมื่อพิมพ์คำค้นหาในกล่องค้นหา  
+        if(event.keyCode==9){  //  ตรวจสอบปุ่มถ้ากด ถ้าเป็นปุ่ม Enter ให้เรียกฟังก์ชันค้นหาสถานที่  
+            searchPlace();      // ฟังก์ฃันค้นหาสถานที่  
+        }         
+    }); 
+});  
+
+
+$(function(){  
+    $("<script/>", {  
+      "type": "text/javascript",  
+      src: "http://maps.google.com/maps/api/js?v=3.2&sensor=false&language=th&callback=initialize"  
+    }).appendTo("body");      
+});  
+</script>    
+</body>  
+</html>  

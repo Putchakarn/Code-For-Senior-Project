@@ -1,0 +1,76 @@
+/** TableShowData **/
+#tableShowData 
+{
+	clear: both;
+	height: 50px;
+	width: 860px;
+	margin: 0 auto;
+	padding: 1px;
+	text-align: center;
+}
+
+
+/** Navigation **/
+#navigation {
+	background: url(../images/bg-navigation.png) no-repeat;
+	clear: both;
+	height: 50px;
+	width: 860px;
+	margin: 0 auto;
+	padding: 1px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+#navigation ul {
+	display: inline-block;
+	width: 860px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+#navigation li {
+	float: left;
+	background-position: 0 -118px;
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 500px;
+	margin: 0;
+	padding-left: 1px;
+	text-align: center;
+}
+#navigation li:first-child {
+	background: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+#navigation li a {
+	color: #fff;
+	display: block;
+	font: bold 14px/48px Arial, Helvetica, sans-serif;
+	height: 49px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+#navigation li a:hover {
+	background-position: 0 -59px;
+	color: #6d6157;
+}
+/*------------------------------ CONTENTS ------------------------------*/
+#tableShowData table .selected td div strong {
+	font-size: 20px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+#tableShowData table {
+	text-align: center;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 18px;
+	line-height: normal;
+}
+.Button {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	background-color: #985716;
+	text-align: center;
+}
